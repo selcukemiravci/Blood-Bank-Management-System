@@ -12,13 +12,12 @@ const Achivement = () => {
                 <Row className="align-items-center">
                     <Col md={6} lg={6} sm={12}>
                         <div className="section-title">
-                            <h1>Our Achievement</h1>
+                            <h1>Our Motives</h1>
                         </div>
                         <div className="achivement-txt">
-                            <p className="w-75">Smiling comes naturally to Dr. Harrie, author of ‘Donto’. He has embraced Cosmetic Dentistry and has redesigned the smiles for thev thousands of patients.</p>
+                            <p className="w-75">Our motivation is that we want to create a unique solution to an essential problem with the uses of technology and problem solving. This system will allow blood banks and hospitals to have easier access to their patients or clients which promotes faster operation.</p>
                             <div className="more-tool">
-                            <Link to="/login"><button  className="theme-btn btn-fill">Appoinment</button></Link>
-                            <a href="https://www.youtube.com/watch?v=7HhdN9_MgE8" className="watchBtn"><button className="theme-btn btn-unfill"><FontAwesomeIcon className="play-btn" icon={faPlayCircle} /><span>Watch Vedio</span></button></a>
+                            <Link to="/login"><button  className="theme-btn btn-fill">Sign in</button></Link>
                             </div>
                         </div>
                     </Col>
@@ -33,19 +32,19 @@ const Achivement = () => {
                             <Col sm={6} className="text-center">
                                 <div className="single-funfact">
                                     <span>75 +</span>
-                                    <p>Dentist</p>
+                                    <p>Donors</p>
                                 </div>
                             </Col>
                             <Col sm={6} className="text-center">
                                 <div className="single-funfact">
-                                    <span>25 +</span>
-                                    <p>Awards</p>
+                                    <span>1,000 +</span>
+                                    <p>Users</p>
                                 </div>
                             </Col>
                             <Col sm={6} className="text-center">
                                 <div className="single-funfact">
                                     <span>28 +</span>
-                                    <p>Branch</p>
+                                    <p>Successful Connection</p>
                                 </div>
                             </Col>
                         </Row>
