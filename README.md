@@ -10,121 +10,25 @@
 
 ## Description
 This project was made by Computer Science Undergraduate students from the University of Calgary
-for the SENG 300 Winter 2022 Introduction to Software Engineering course.
+for the CPSC 471 Fall 2022 - Database Management Systems course.
 
 
 ## Requirements:
-1. Java 17 JDK
-2. JUnit 4
+1. React.js
+2. Mysql
 
 ### Recommended IDE:
-1. Eclipse 2021-12
+1. VsCode
 
-
-## Understanding the file structure
-* The repository contains 3 main folders (these are 3 Eclipse projects):
-    + SCS - Hardware - v3.1
-        + This is a project that contains a simulation of hardware for a self checkout station. Written by Dr. Walker.
-    + SCS - Software 
-        + This project contains all the software and gui classes that interacts with the hardware interface.
-        + The class that ties most of the software together is the class named **"SelfCheckoutStationSoftware.java"**
-        + In order to run our Graphical User Interface please run **SelfCheckoutStationSoftwareGUI.java**
-        * Our Graphical User Interface implements the following usecases:
-            + Scanning Items
-                + RemoveItemPromptGUI
-                + StationItemGUI
-                + RemoveItemGUI
-                + ScanLargeItemGUI
-                + WrongWeightGUI
-            + Checkout
-                + SelfCheckoutStationSoftwareGUI
-                + VirtualKeypad
-                + BagsGUI
-                + PersonalBagPromptGUI
-                + TakeBagPromptGUI
-            + Customer makes a Payment
-                + EnterMemberCard
-                + PaymentGUI
-                + PaymentTesterGUI
-                + PaymentCompleteGUI
-            + Attendant Panel
-                + Login
-                + FailedLogin
-                + AttendantRemoveItemGUI
-                + AttendantApproveLargeItemGUI
-                + RequestAssistanceGUI
-    + SCS - Software - Test
-        + This project contains all the JUnit 4 tests for our software.
-         + The class that combines most of the usecases togeher is called **"Testing.java"**. This class is simulating the SelfCheckoutStation through command prompt.
-
-            + BaggingAreaSofwareTest.java
-                + This tests our implementation for SelfCheckoutStationSoftware.
-                + Bagging area software is inside the SelfCheckoutStationSoftware class.
-                + This testing for "customer failing adding items to bagging area.
-                + Due to random probility of scanning an item fails, %10 of the time this test will result in failing.
-
-            + BarcodeScannerSoftwareTest.java
-                + This tests our implementation of the BarcodeScannerObserver interface.
-
-            + BanknoteSlotTest.java
-                + This tests our implementation for BanknoteSlotSoftware.
-                + This testing checks any payments with banknotes.
-
-            + CardTest.java
-                + This tests our implementation for CardSoftware (payment with credit, debit, and gift card).
-                + This testing provides %100 coverage however due to random probility of swipe and tap features failing, sometimes the testing gives error. 
-                + The random probility of error is about 10% of the time.
-
-            + CoinSlotSoftwareTest.java
-                + This tests our implementation for CoinSlotSoftware
-                + This testing checks any payments with coins.
-
-            + ElectronicScaleSoftwareTest.java
-                + This tests our implementation of the ElectronicScaleObserver interface.
-
-            + EnterMembershipCardTest.java
-                + This tests our implementation for ScanMembershipCard.
-                + This testing provides %100 coverage however due to random probility of swipe and tap features failing, sometimes the testing gives error. 
-                + The random probility of error is about 10% of the time.
-
-            + PartialPaymentTest.java
-                + This tests our implementation for PartialPaymentSoftware.
-                + This testing is for handling the partial payments.
-
-            + ReceiptPrintTest.java
-                + This tests our implementation of the ReceiptPrint.
-                + This testing our implementation of the ink and paper.
-
-            + ReturnChangeTest.java
-                + This tests our implementation for ReturnChangeSoftware. 
-                + This tests our implementation for "how many bags did you use?"
-                + If using it as a testing unit only, then please put in a "0" for all cases, otherwise program will not run!
-                + If using it as a program, then any number of bag input works
-                 
-            + TestHardware.java
-                + This tests our implementation for TestHardware.
-
-            + Testing.java
-                + This tests our implementation for
-                + This provides a simulation of our software through command prompt, make sure to enter your specified number of bags to run this program.
-
-            + TestItems.java
-                + This test is for our Barcoded Items.
-                + It tests each item we have in the shopping cart.
-
-            + TouchScreenTest.java
-                + This tests our implementation for TouchScreenSoftware. 
-                + This testing is for "how should adding bags communicate with electronic scale and the station.".
-
-            + ScanMembershipCardTest.java
-                + Tests when a member card gets swiped.
-                + Checking that non-registered users and invalid types of cards do not get set as memberNumber in SelfCheckoutStationSoftware, which will later be used                   to print member number in receipt.
 
 ## Downloading the project:
 * Easiest way is to clone the repository:
-    + [SENG 300 Iteration3 GitHub](https://github.com/salvatore77788/project-iteration-3-software)
-        + You will need to be added to the repository as it is a private repository.
-    + Alternatively, if you're a TA or Professor, you need to move our code into a file system where you have permissions to run and compile code.
+    + [Blood Management System GitHub](https://github.com/selcukemiravci/Blood-Bank-Management-System)
+        * `npm start`
+
+        Runs the app in the development mode.\
+        Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+        + Alternatively, if you're a TA or Professor, you need to move our code into a file system where you have permissions to run and compile code.
 
 ## Compiling the code
 1. Using Eclipse:
