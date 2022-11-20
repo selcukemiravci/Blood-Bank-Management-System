@@ -1,4 +1,4 @@
-# SENG 300 Self Checkout Station Final Iteration 
+# CPSC 471 Final Project - Blood Management System
 
 ## Table of Contents
 - [Description](#Description)
