@@ -24,14 +24,12 @@ const About = () => {
           <Col md={12} lg={6}>
             <div className="about-right mt-5 mt-lg-0">
               <div className="about-content text-start" data-aos="zoom-in">
-                <h1>Welcome to a Family</h1>
+                <h1>Welcome to Bloody Bank!</h1>
                 <p>
-                  Welcome to Blood Bank Management System - Bloody Bank. Bloody
-                  bank is a lood banking is the process that takes place in the
-                  lab to make sure that donated blood, or blood products, are
-                  safe before they are used in blood transfusions and other
-                  medical procedures. We help patients and donors to safely
-                  donate and request bloods!
+                  We are more than just your casual bank. Bloody bank is a
+                  charity that helps patients all around Canada to receive their
+                  urgent blood treatment needs! We help patients and donors to
+                  safely donate and request bloods!
                 </p>
                 <a href="/about">About Us</a>
               </div>

@@ -12,7 +12,7 @@ const Promo = () => {
           <Col md={12} sm={12} lg={6}>
             <div className="promo-content text-white text-start">
               <h1 className="mt-sm-req">
-                Request your appointment and contribute to saving lives!
+                Register to request/donate blood and contribute to saving lives!
               </h1>
               <Link to="/login">
                 <button href=".#" className="theme-btn btn-fill mt-4">
