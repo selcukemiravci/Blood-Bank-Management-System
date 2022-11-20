@@ -3,7 +3,7 @@
 ## Table of Contents
 - [Description](#Description)
 - [Requirements](#Requirements)
-- [Installation] (#Installation)
+- [Installation](#installation)
 - [Authors](#Authors)
 - [License](#License)
 
@@ -20,9 +20,6 @@ The following technologies and tools were used to build our project:
 - CSS
 - HTML
 - MySQL
-
-### Recommended IDE:
-1. VsCode
 
 
 ## Downloading the project:
