@@ -35,4 +35,4 @@ for the CPSC 471 Fall 2022 - Database Management Systems course.
 * Amirreza Pazira
 
 ## LICENSE
-[MIT]()
+[MIT](https://github.com/selcukemiravci/Blood-Bank-Management-System/blob/main/LICENSE)
