@@ -14,6 +14,6 @@ const About = () => {
           <Achivement />
         </>
     );
-};
+
 
 export default About;

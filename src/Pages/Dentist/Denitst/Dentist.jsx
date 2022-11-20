@@ -1,16 +1,14 @@
-import React from 'react';
-import Appoinment from '../../../Pages/Home/Appoinment/Appoinment';
-import Banner from '../Bannner/Banner';
-import Details from '../Details/Details';
+import React from "react";
+import Banner from "../Bannner/Banner";
+import Details from "../Details/Details";
 
 const Dentist = () => {
-    return (
-        <>
-            <Banner />
-            <Details />
-            <Appoinment />
-        </>
-    );
+  return (
+    <>
+      <Banner />
+      <Details />
+    </>
+  );
 };
 
 export default Dentist;
