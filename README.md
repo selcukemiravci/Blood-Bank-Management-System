@@ -143,23 +143,8 @@ for the SENG 300 Winter 2022 Introduction to Software Engineering course.
 
 ## AUTHORS:
 * Emir Avci
-* Quyanna Campbell
-* Doowen Cho
-* MD AZHARUL ISLAM FAHIM
-* Jordan Humenjuk
-* James Khalil
-* Alisha Lalani
-* Paul Latkovic
-* Raine Legary
-* Guillaume Pluta
-* Vincent Salvatore
-* Anson Sieu
-* Sean Stacey
-* Jordan Tran
-* Carlos Veintimilla
-* Mitchell Wilson
-* Chirag Asrani
-* Cebrail Durna
+* Rei Tsunemi
+* Amirreza Pazira
 
 ## LICENSE
 [MIT]()
