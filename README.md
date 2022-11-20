@@ -3,6 +3,7 @@
 ## Table of Contents
 - [Description](#Description)
 - [Requirements](#Requirements)
+- [Installation] (#Installation)
 - [Authors](#Authors)
 - [License](#License)
 
@@ -18,6 +19,7 @@ The following technologies and tools were used to build our project:
 - Node.js
 - CSS
 - HTML
+- MySQL
 
 ### Recommended IDE:
 1. VsCode
@@ -29,6 +31,7 @@ The following technologies and tools were used to build our project:
     + Alternatively, if you're a TA or Professor, you need to move our code into a file system where you have permissions to run and compile code.
 
 ## Installation
+
 ### **<span style="color:red;">!!! Note !!!</span>** 
 - **This section is only necessary if you want to download the source code and run in it at localhost in your local device.**
 
