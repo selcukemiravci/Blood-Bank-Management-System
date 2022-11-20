@@ -1,11 +1,10 @@
 .promo-wrapper {
-  background: #fff;
+  background-color: #004caa;
 }
 
 .promo-content h1 {
   font-size: 36px;
   line-height: 48px;
-  color: #000;
 }
 
 .promo-banner {

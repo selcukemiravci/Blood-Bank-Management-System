@@ -33,7 +33,7 @@ const About = () => {
                   medical procedures. We help patients and donors to safely
                   donate and request bloods!
                 </p>
-                <a href="/page/about">About Us</a>
+                <a href="/about">About Us</a>
               </div>
               <div className="fun-fact-sec" data-aos="fade-right">
                 <div className="single-fun">
