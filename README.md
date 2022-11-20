@@ -75,8 +75,8 @@ This folder will created in the root directory of the ```social-engineering-quiz
 ## Step 6: Starting the App
 Go to the root directory of the project and then start the app:
 ```
-$ cd social-engineering-quiz    // first, go to root directory of the project...
-$ npm start                     // then, start the app in the root directory
+$ cd Blood-Bank-Management-System    // first, go to root directory of the project...
+$ npm start                          // then, start the app in the root directory
 ```
 
 ### `npm start`
