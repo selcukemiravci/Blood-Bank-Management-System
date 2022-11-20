@@ -3,7 +3,6 @@
 ## Table of Contents
 - [Description](#Description)
 - [Requirements](#Requirements)
-- [Understanding the file structure](#understanding-the-file-structure)
 - [Authors](#Authors)
 - [License](#License)
 
@@ -24,11 +23,7 @@ for the CPSC 471 Fall 2022 - Database Management Systems course.
 ## Downloading the project:
 * Easiest way is to clone the repository:
     + [Blood Management System GitHub](https://github.com/selcukemiravci/Blood-Bank-Management-System)
-        * `npm start`
-
-        Runs the app in the development mode.\
-        Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-        + Alternatively, if you're a TA or Professor, you need to move our code into a file system where you have permissions to run and compile code.
+    + Alternatively, if you're a TA or Professor, you need to move our code into a file system where you have permissions to run and compile code.
 
 ## Compiling the code
 1. Using Eclipse:
