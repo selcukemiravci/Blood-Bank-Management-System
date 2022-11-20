@@ -1,6 +1,5 @@
 import React from "react";
 import Feature from "../../../components/Feature/Feature";
-import LatestBlog from "../../../components/LatestBlog/LatestBlog";
 import Service from "../../../components/Service/Service";
 import About from "../About/About";
 import Promo from "../Appoinment-promo/Promo";
@@ -13,7 +12,6 @@ const Home = () => {
       <Feature />
       <About />
       <Service />
-      <LatestBlog />
       <Promo />
     </>
   );

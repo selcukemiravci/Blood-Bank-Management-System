@@ -3,7 +3,6 @@ import "aos/dist/aos.css";
 import React, { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import donto from "../../../Images/blood.png";
-import dontoAnimated from "../../../Images/cleaner.png";
 import "./About.css";
 
 const About = () => {
@@ -20,11 +19,6 @@ const About = () => {
           <Col md={12} lg={6}>
             <div className="about-left">
               <img src={donto} alt="donto" className="img-fluid donto" />
-              <img
-                src={dontoAnimated}
-                alt="donto"
-                className="img-fluid animated dontoAnim"
-              />
             </div>
           </Col>
           <Col md={12} lg={6}>
