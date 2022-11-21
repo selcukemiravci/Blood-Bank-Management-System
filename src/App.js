@@ -4,6 +4,9 @@ import AuthProvider from './Context/AuthProvider';
 import About from './Pages/About/About/About';
 import Approved from './Pages/Approved/Approved';
 import Contact from './Pages/Contact/Contact/Contact';
+import Donate from './Pages/DonateBlood/Donate';
+import Request from './Pages/RequestBlood/Request';
+import Dashboard from './Pages/Dashboard/Dashboard';
 import Footer from './Pages/Home/Footer/Footer.jsx';
 import Header from './Pages/Home/Header/Header.jsx';
 import Home from './Pages/Home/Home/Home.jsx';
@@ -25,6 +28,9 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/approved' element={<Approved />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/donate' element={<Donate />} />
+          <Route path='/request' element={<Request />} />
+          <Route path='/dashboard' element={<Dashboard />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />
