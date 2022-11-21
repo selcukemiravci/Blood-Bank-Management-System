@@ -71,6 +71,15 @@ $ npm install
 This will download all the dependencies defined in the ```package.json``` file and into a ```node_modules``` folder.\
 This folder will created in the root directory of the ```social-engineering-quiz``` folder in your local machine
 
+## Step 5: External Libaries
+
+If you have never used material-ui, execute the following commands in your terminal before starting our project :
+
+```
+npm install @material-ui/core
+npm install @material-ui/core @materiait-ui/icons
+npm install @emotion/react
+```
 
 ## Step 6: Starting the App
 Go to the root directory of the project and then start the app:
