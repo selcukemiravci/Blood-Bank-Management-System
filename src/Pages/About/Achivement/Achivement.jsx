@@ -1,5 +1,3 @@
-import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -12,7 +10,7 @@ const Achivement = () => {
                 <Row className="align-items-center">
                     <Col md={6} lg={6} sm={12}>
                         <div className="section-title">
-                            <h1>Our Motives</h1>
+                            <h4>Our Motives</h4>
                         </div>
                         <div className="achivement-txt">
                             <p className="w-75">Our motivation is that we want to create a unique solution to an essential problem with the uses of technology and problem solving. This system will allow blood banks and hospitals to have easier access to their patients or clients which promotes faster operation.</p>

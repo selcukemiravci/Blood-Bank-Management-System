@@ -9,7 +9,7 @@ const Service = () => {
         <Row>
           <Col sm={12}>
             <div className="section-title text-center">
-              <h1>Patient Focused Approach</h1>
+              <h3>Approach To Our Goal</h3>
             </div>
           </Col>
         </Row>
@@ -17,19 +17,6 @@ const Service = () => {
           {AboutFocus.map((treatment) => (
             <Services key={treatment.id} treatment={treatment} />
           ))}
-        </Row>
-      </Container>
-    </section>
-  );
-  return (
-    <section className="service-wrapper">
-      <Container>
-        <Row>
-          <Col sm={12}>
-            <div className="section-title text-center">
-              <h1>Patient Focused Approach</h1>
-            </div>
-          </Col>
         </Row>
       </Container>
     </section>
