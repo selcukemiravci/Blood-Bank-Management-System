@@ -76,9 +76,7 @@ This folder will created in the root directory of the ```social-engineering-quiz
 If you have never used material-ui, execute the following commands in your terminal before starting our project :
 
 ```
-npm install @material-ui/core
-npm install @material-ui/core @materiait-ui/icons
-npm install @emotion/react
+npm install @mui/material @emotion/react @emotion/styled
 ```
 
 ## Step 6: Starting the App
