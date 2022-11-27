@@ -1,9 +1,3 @@
-import {
-  faFacebook,
-  faGithub,
-  faGoogle,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   createUserWithEmailAndPassword,
@@ -27,19 +21,6 @@ const Login = () => {
   const googleProvider = new GoogleAuthProvider();
   // const githubProvider = new GithubAuthProvider();
 
-  const singnInWithGoogleHeander = () => {
-    signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        // setUser(result.user);
-        console.log(result.user);
-        navigate("/approved");
-      })
-      .catch((error) => {
-        // setError(error.message);
-        console.log(error);
-      });
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password).then((resutlt) => {
@@ -47,6 +28,16 @@ const Login = () => {
       console.log(user);
     });
     navigate("/approved");
+  };
+
+  const registerRoute = (e) => {
+    e.preventDefault();
+    navigate("/register");
+  };
+
+  const forgotRoute = (e) => {
+    e.preventDefault();
+    navigate("/forgot");
   };
 
   const handleEmailChange = (e) => {
@@ -74,6 +65,7 @@ const Login = () => {
                         Please login or register to donate or request blood
                         donation
                       </p>
+
                       <form onSubmit={handleSubmit}>
                         <div className="form-outline mb-4">
                           <input
@@ -101,24 +93,21 @@ const Login = () => {
                           <button className="theme-btn btn-fill" type="submit">
                             Log in
                           </button>
-                          <a
-                            className="text-muted text-decoration-none"
-                            href="#!"
-                          >
+                          <button className="white-btn" onClick={forgotRoute}>
                             Forgot password?
-                          </a>
-                        </div>
-
-                        <div className="d-flex align-items-center justify-content-center pb-4">
-                          <p className="mb-0 me-2">Don't have an account?</p>
-                          <button
-                            type="button"
-                            className="btn btn-outline-danger"
-                          >
-                            Create new
                           </button>
                         </div>
                       </form>
+                      <div className="d-flex align-items-center justify-content-center pb-4">
+                        <p className="mb-0 me-2">Don't have an account?</p>
+                        <button
+                          type="button"
+                          className="btn btn-outline-danger"
+                          onClick={registerRoute}
+                        >
+                          Create new
+                        </button>
+                      </div>
                     </div>
                   </div>
                   <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
