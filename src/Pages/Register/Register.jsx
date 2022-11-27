@@ -15,17 +15,14 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormHelperText from "@mui/material/FormHelperText";
 const Register = () => {
-  const navigate = useNavigate();
-  const registered = () => {
-    navigate("/approved");
+  const [patientFlag, setPatientFlag] = React.useState(true);
+  const [donorFlag, setDonorFlag] = React.useState(true);
+
+  const handleClickPatient = () => {
+    setDonorFlag(!donorFlag);
   };
-  const [users, setusers] = React.useState({
-    patients: true,
-    donors: false,
-  });
-  const { patients, donors } = users;
-  const handleFlavorChange = (event) => {
-    setusers({ ...users, [event.target.name]: event.target.checked });
+  const handleClickDonor = () => {
+    setPatientFlag(!patientFlag);
   };
   return (
     <Container>
@@ -73,26 +70,38 @@ const Register = () => {
             />
             <FormControl component="fieldset">
               <FormGroup>
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={patients}
-                      onChange={handleFlavorChange}
-                      name="patients"
-                    />
-                  }
-                  label="Request Blood"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={donors}
-                      onChange={handleFlavorChange}
-                      name="donors"
-                    />
-                  }
-                  label="Donate Blood"
-                />
+                {patientFlag ? (
+                  <FormControlLabel
+                    control={
+                      <Checkbox onChange={handleClickPatient} name="patients" />
+                    }
+                    label="Request Blood"
+                  />
+                ) : (
+                  <FormControlLabel
+                    disabled
+                    control={
+                      <Checkbox onChange={handleClickPatient} name="patients" />
+                    }
+                    label="Request Blood"
+                  />
+                )}
+                {donorFlag ? (
+                  <FormControlLabel
+                    control={
+                      <Checkbox onChange={handleClickDonor} name="donors" />
+                    }
+                    label="Donate Blood"
+                  />
+                ) : (
+                  <FormControlLabel
+                    disabled
+                    control={
+                      <Checkbox onChange={handleClickDonor} name="donors" />
+                    }
+                    label="Donate Blood"
+                  />
+                )}
               </FormGroup>
               <FormHelperText>
                 Please choose the most appropiate options above for your
@@ -101,7 +110,7 @@ const Register = () => {
             </FormControl>
             <Button
               variant="contained"
-              onClick={registered}
+              onClick={() => {}}
               style={{
                 minWidth: "300px",
                 minHeight: "50px",
