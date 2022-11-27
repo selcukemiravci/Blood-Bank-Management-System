@@ -93,7 +93,13 @@ const Login = () => {
                           <button className="theme-btn btn-fill" type="submit">
                             Log in
                           </button>
-                          <button className="white-btn" onClick={forgotRoute}>
+                          <button
+                            className="btn btn-outline-danger"
+                            onClick={forgotRoute}
+                            style={{
+                              fontSize: 16,
+                            }}
+                          >
                             Forgot password?
                           </button>
                         </div>
@@ -105,7 +111,7 @@ const Login = () => {
                           className="btn btn-outline-danger"
                           onClick={registerRoute}
                         >
-                          Create new
+                          Create an Account
                         </button>
                       </div>
                     </div>
