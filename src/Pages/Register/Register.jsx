@@ -1,19 +1,17 @@
 import { Typography } from "@mui/material";
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import { MuiTelInput } from "mui-tel-input";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import { Routes, Route, useNavigate } from "react-router-dom";
 import Checkbox from "@mui/material/Checkbox";
 import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormHelperText from "@mui/material/FormHelperText";
+import Axios from "axios";
+
 const Register = () => {
   const [patientFlag, setPatientFlag] = React.useState(true);
   const [donorFlag, setDonorFlag] = React.useState(true);
@@ -23,6 +21,19 @@ const Register = () => {
   };
   const handleClickDonor = () => {
     setPatientFlag(!patientFlag);
+  };
+  const [emailReg, setEmailReg] = useState("");
+  const [passwordReg, setPasswordReg] = useState("");
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const register = () => {
+    Axios.post("http://localhost:3001/register", {
+      email: emailReg,
+      password: passwordReg,
+    }).then((response) => {
+      console.log(response);
+    });
   };
   return (
     <Container>
@@ -61,12 +72,18 @@ const Register = () => {
               id="email-address"
               label="Email Address"
               placeholder="Email Address"
+              onChange={(e) => {
+                setEmailReg(e.target.value);
+              }}
             />
             <TextField
               required
               id="password"
               label="Password"
               placeholder="Password"
+              onChange={(e) => {
+                setPasswordReg(e.target.value);
+              }}
             />
             <FormControl component="fieldset">
               <FormGroup>
@@ -110,7 +127,7 @@ const Register = () => {
             </FormControl>
             <Button
               variant="contained"
-              onClick={() => {}}
+              onClick={register}
               style={{
                 minWidth: "300px",
                 minHeight: "50px",
