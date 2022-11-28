@@ -8,7 +8,7 @@ import { MuiTelInput } from "mui-tel-input";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 
-const bloodType= [
+const bloodType = [
   {
     value: "A+",
     label: "A+",
@@ -42,7 +42,7 @@ const bloodType= [
     label: "AB-",
   },
 ];
-const genders= [
+const genders = [
   {
     value: "male",
     label: "Male",
@@ -58,19 +58,19 @@ const Donate = () => {
   const handleeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setBlood(event.target.value);
   };
-  
+
   const [gender, setGender] = React.useState("");
 
   const handleeeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setGender(event.target.value);
   };
-  
+
   const [value, setValue] = React.useState("");
 
   const handleChange = (newValue) => {
     setValue(newValue);
   };
-  
+
   return (
     <Box
       sx={{
@@ -95,26 +95,26 @@ const Donate = () => {
             border: "3px solid",
             color: "red",
             borderRadius: "9px ",
-            backgroundColor: 'pink'
+            backgroundColor: "pink",
           }}
         >
           Blood Donation
         </Typography>
         <Container></Container>
         <TextField
-          id="donor-card"
-          label="Donor Card"
-          placeholder="Donor Card"
+          id="healthcard"
+          label="Health Card"
+          placeholder="Health Card"
         />
         <TextField
           required
-          id="first-name"
+          id="firstname"
           label="First Name"
           placeholder="First Name"
         />
         <TextField
           required
-          id="last-name"
+          id="lastname"
           label="Last Name"
           placeholder="Last Name"
         />
@@ -128,7 +128,7 @@ const Donate = () => {
 
         <Stack direction="row" spacing={2} maxWidth="516px">
           <TextField
-            id="blood"
+            id="bloodtype"
             select
             required
             label="Blood Type"
@@ -159,6 +159,7 @@ const Donate = () => {
         </Stack>
 
         <MuiTelInput
+          id="phone"
           required
           defaultCountry="CA"
           label="Phone"

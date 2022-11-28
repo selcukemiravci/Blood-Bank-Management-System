@@ -102,14 +102,19 @@ const Request = () => {
         </Typography>
         <Container></Container>
         <TextField
+          id="healthcard"
+          label="Health Card"
+          placeholder="Health Card"
+        />
+        <TextField
           required
-          id="first-name"
+          id="firstname"
           label="First Name"
           placeholder="First Name"
         />
         <TextField
           required
-          id="last-name"
+          id="lastname"
           label="Last Name"
           placeholder="Last Name"
         />
@@ -123,7 +128,7 @@ const Request = () => {
 
         <Stack direction="row" spacing={2} maxWidth="516px">
           <TextField
-            id="blood"
+            id="bloodtype"
             select
             required
             label="Blood Type"
@@ -153,13 +158,14 @@ const Request = () => {
         </Stack>
         <TextField
           required
-          id="request-reason"
+          id="reason"
           label="Reason"
           multiline
           rows={4}
           placeholder="Please describe your reason for blood request"
         />
         <MuiTelInput
+          id="phone"
           required
           defaultCountry="CA"
           label="Phone"
