@@ -12,7 +12,6 @@ import Footer from "./Pages/Home/Footer/Footer.jsx";
 import Header from "./Pages/Home/Header/Header.jsx";
 import Home from "./Pages/Home/Home/Home.jsx";
 import Login from "./Pages/Login/Login";
-import NotFound from "./Pages/NotFound/NotFound";
 import Service from "./Pages/Services/Service/Service";
 
 function App() {
@@ -33,7 +32,6 @@ function App() {
           <Route path="/donate" element={<Donate />} />
           <Route path="/request" element={<Request />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </Router>

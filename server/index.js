@@ -38,7 +38,7 @@ const db = mysql.createConnection({
   user: "root",
   host: "localhost",
   password: "selcuk12",
-  database: "bloodybank-db",
+  database: "bloodybank",
 });
 
 app.post("/register", (req, res) => {
@@ -52,7 +52,7 @@ app.post("/register", (req, res) => {
       console.log(err);
     }
     db.query(
-      "INSERT INTO users (email, password) VALUES (?,?)",
+      "INSERT INTO registration (email, password) VALUES (?,?)",
       [email, hash],
       (err, result) => {
         console.log(err);
@@ -119,6 +119,6 @@ app.post("/register", (req, res) => {
 //   });
 // });
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log("running server");
 });
