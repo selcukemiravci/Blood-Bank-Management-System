@@ -6,7 +6,6 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 
-const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
 const app = express();
@@ -119,6 +118,6 @@ app.post("/register", (req, res) => {
 //   });
 // });
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log("running server");
 });
