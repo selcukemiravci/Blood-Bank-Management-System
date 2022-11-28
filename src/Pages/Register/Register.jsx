@@ -22,11 +22,11 @@ const Register = () => {
   const handleClickDonor = () => {
     setPatientFlag(!patientFlag);
   };
-  const [emailReg, setEmailReg] = useState("");
-  const [passwordReg, setPasswordReg] = useState("");
+  const [emailReg, setEmailReg] = React.useState("");
+  const [passwordReg, setPasswordReg] = React.useState("");
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
   const register = () => {
     Axios.post("http://localhost:3001/register", {
       email: emailReg,
