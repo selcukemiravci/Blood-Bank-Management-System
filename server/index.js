@@ -44,8 +44,8 @@ const db = mysql.createConnection({
 app.post("/register", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-  const patient = req.body.patient;
-  const donor = req.body.donor;
+  // const patient = req.body.patient;
+  // const donor = req.body.donor;
 
   bcrypt.hash(password, saltRounds, (err, hash) => {
     if (err) {
@@ -61,38 +61,63 @@ app.post("/register", (req, res) => {
   });
 });
 
-app.get("/login", (req, res) => {
-  if (req.session.user) {
-    res.send({ loggedIn: true, user: req.session.user });
-  } else {
-    res.send({ loggedIn: false });
-  }
-});
+// app.get("/login", (req, res) => {
+//   if (req.session.user) {
+//     res.send({ loggedIn: true, user: req.session.user });
+//   } else {
+//     res.send({ loggedIn: false });
+//   }
+// });
 
-app.post("/login", (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
+// app.post("/login", (req, res) => {
+//   const email = req.body.email;
+//   const password = req.body.password;
 
-  db.query("SELECT * FROM users WHERE email = ?;", email, (err, result) => {
-    if (err) {
-      res.send({ err: err });
-    }
+//   db.query("SELECT * FROM users WHERE email = ?;", email, (err, result) => {
+//     if (err) {
+//       res.send({ err: err });
+//     }
 
-    if (result.length > 0) {
-      bcrypt.compare(password, result[0].password, (error, response) => {
-        if (response) {
-          req.session.user = result;
-          console.log(req.session.user);
-          res.send(result);
-        } else {
-          res.send({ message: "Wrong email/password combination!" });
-        }
-      });
-    } else {
-      res.send({ message: "User doesn't exist" });
-    }
-  });
-});
+//     if (result.length > 0) {
+//       bcrypt.compare(password, result[0].password, (error, response) => {
+//         if (response) {
+//           req.session.user = result;
+//           console.log(req.session.user);
+//           res.send(result);
+//         } else {
+//           res.send({ message: "Wrong email/password combination!" });
+//         }
+//       });
+//     } else {
+//       res.send({ message: "User doesn't exist" });
+//     }
+//   });
+// });
+
+// app.post("/donate", (req, res) => {
+//   const email = req.body.email;
+//   const password = req.body.password;
+
+//   db.query("SELECT * FROM users WHERE email = ?;", email, (err, result) => {
+//     if (err) {
+//       res.send({ err: err });
+//     }
+
+//     if (result.length > 0) {
+//       bcrypt.compare(password, result[0].password, (error, response) => {
+//         if (response) {
+//           req.session.user = result;
+//           console.log(req.session.user);
+//           res.send(result);
+//         } else {
+//           res.send({ message: "Wrong email/password combination!" });
+//         }
+//       });
+//     } else {
+//       res.send({ message: "User doesn't exist" });
+//     }
+//   });
+// });
 
 app.listen(3001, () => {
   console.log("running server");
