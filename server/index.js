@@ -52,8 +52,8 @@ app.post("/register", (req, res) => {
       console.log(err);
     }
     db.query(
-      "INSERT INTO users (username, password) VALUES (?,?)",
-      [username, hash],
+      "INSERT INTO users (email, password) VALUES (?,?)",
+      [email, hash],
       (err, result) => {
         console.log(err);
       }
@@ -69,34 +69,34 @@ app.get("/login", (req, res) => {
   }
 });
 
-app.post("/login", (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
+// app.post("/login", (req, res) => {
+//   const username = req.body.username;
+//   const password = req.body.password;
 
-  db.query(
-    "SELECT * FROM users WHERE username = ?;",
-    username,
-    (err, result) => {
-      if (err) {
-        res.send({ err: err });
-      }
+//   db.query(
+//     "SELECT * FROM users WHERE username = ?;",
+//     username,
+//     (err, result) => {
+//       if (err) {
+//         res.send({ err: err });
+//       }
 
-      if (result.length > 0) {
-        bcrypt.compare(password, result[0].password, (error, response) => {
-          if (response) {
-            req.session.user = result;
-            console.log(req.session.user);
-            res.send(result);
-          } else {
-            res.send({ message: "Wrong username/password combination!" });
-          }
-        });
-      } else {
-        res.send({ message: "User doesn't exist" });
-      }
-    }
-  );
-});
+//       if (result.length > 0) {
+//         bcrypt.compare(password, result[0].password, (error, response) => {
+//           if (response) {
+//             req.session.user = result;
+//             console.log(req.session.user);
+//             res.send(result);
+//           } else {
+//             res.send({ message: "Wrong username/password combination!" });
+//           }
+//         });
+//       } else {
+//         res.send({ message: "User doesn't exist" });
+//       }
+//     }
+//   );
+// });
 
 app.listen(3001, () => {
   console.log("running server");
