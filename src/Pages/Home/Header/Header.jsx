@@ -3,13 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import useAuth from "../../../Hooks/useAuth";
 import logo from "../../../Images/loogo.png";
 import "./Header.css";
 
 const Header = () => {
-  const { user, logout } = useAuth();
-
   return (
     <div className="head-bg">
       <Navbar className="navbar" collapseOnSelect expand="lg">
@@ -32,25 +29,9 @@ const Header = () => {
               <Link to="/contact" className="list-item text-decoration-none">
                 Contact
               </Link>
-              {user.email ? (
-                <button
-                  type="button"
-                  className="btn btn-danger"
-                  onClick={logout}
-                >
-                  Log Out
-                </button>
-              ) : (
-                <Link to="/login" type="button" className="btn btn-danger">
-                  Login
-                </Link>
-              )}
-              {user.email && (
-                <Navbar.Text>
-                  <FontAwesomeIcon icon={faUser} />
-                  <span className="userName">{user.displayName}</span>
-                </Navbar.Text>
-              )}
+              <Link to="/login" type="button" className="btn btn-danger">
+                Login
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -60,3 +41,23 @@ const Header = () => {
 };
 
 export default Header;
+
+// {user.email ? (
+//   <button
+//     type="button"
+//     className="btn btn-danger"
+//     onClick={logout}
+//   >
+//     Log Out
+//   </button>
+// ) : (
+//   <Link to="/login" type="button" className="btn btn-danger">
+//     Login
+//   </Link>
+// )}
+// {user.email && (
+//   <Navbar.Text>
+//     <FontAwesomeIcon icon={faUser} />
+//     <span className="userName">{user.displayName}</span>
+//   </Navbar.Text>
+// )}

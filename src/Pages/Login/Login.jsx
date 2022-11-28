@@ -1,13 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  createUserWithEmailAndPassword,
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-} from "firebase/auth";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import useAuth from "../../Hooks/useAuth";
 import "./Login.css";
 import logo from "../../Images/loogo.png";
 
@@ -15,18 +8,9 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { handleFacebookSignIN, signInWithGithub } = useAuth();
-
-  const auth = getAuth();
-  const googleProvider = new GoogleAuthProvider();
-  // const githubProvider = new GithubAuthProvider();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password).then((resutlt) => {
-      const user = resutlt.user;
-      console.log(user);
-    });
     navigate("/approved");
   };
 
