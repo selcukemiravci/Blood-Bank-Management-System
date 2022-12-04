@@ -52,6 +52,8 @@ const genders = [
     label: "Female",
   },
 ];
+const isLetters = (str) => /^[A-Za-z]*$/.test(str);
+
 const Request = () => {
   const [blood, setBlood] = React.useState("");
 
@@ -70,7 +72,22 @@ const Request = () => {
   const handleChange = (newValue) => {
     setValue(newValue);
   };
+  const [valFirstName, setValFirstName] = React.useState("");
 
+  const onInputChangeFirstName = (e) => {
+    const { value } = e.target;
+    if (isLetters(value)) {
+      setValFirstName(value);
+    }
+  };
+  const [valLastName, setValLastName] = React.useState("");
+
+  const onInputChangeLastName = (e) => {
+    const { value } = e.target;
+    if (isLetters(value)) {
+      setValLastName(value);
+    }
+  };
   return (
     <Box
       sx={{
@@ -102,25 +119,51 @@ const Request = () => {
         </Typography>
         <Container></Container>
         <TextField
+          type="number"
+          onInput={(e) => {
+            e.target.value = Math.max(0, parseInt(e.target.value))
+              .toString()
+              .slice(0, 10);
+          }}
+          min={0}
           id="healthcard"
           label="Health Card"
           placeholder="Health Card"
         />
         <TextField
           required
+          inputProps={{ maxLength: 10 }}
           id="firstname"
           label="First Name"
           placeholder="First Name"
+          value={valFirstName}
+          onChange={onInputChangeFirstName}
         />
         <TextField
           required
+          inputProps={{ maxLength: 10 }}
           id="lastname"
           label="Last Name"
           placeholder="Last Name"
+          value={valLastName}
+          onChange={onInputChangeLastName}
         />
-        <TextField required id="age" label="Age" placeholder="Age" />
         <TextField
           required
+          type="number"
+          onInput={(e) => {
+            e.target.value = Math.max(0, parseInt(e.target.value))
+              .toString()
+              .slice(0, 16);
+          }}
+          min={0}
+          id="age"
+          label="Age"
+          placeholder="Age"
+        />
+        <TextField
+          required
+          inputProps={{ maxLength: 20 }}
           id="address"
           label="Address"
           placeholder="Address"
@@ -158,6 +201,7 @@ const Request = () => {
         </Stack>
         <TextField
           required
+          inputProps={{ maxLength: 100 }}
           id="reason"
           label="Reason"
           multiline
@@ -166,6 +210,7 @@ const Request = () => {
         />
         <MuiTelInput
           id="phone"
+          inputProps={{ maxLength: 15 }}
           required
           defaultCountry="CA"
           label="Phone"
