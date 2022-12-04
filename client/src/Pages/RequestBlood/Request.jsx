@@ -100,20 +100,18 @@ const Request = () => {
       console.log("Success");
     });
   };
-  const [valFirstName, setValFirstName] = React.useState("");
 
   const onInputChangeFirstName = (e) => {
     const { value } = e.target;
     if (isLetters(value)) {
-      setValFirstName(value);
+      setFirstName(value);
     }
   };
-  const [valLastName, setValLastName] = React.useState("");
 
   const onInputChangeLastName = (e) => {
     const { value } = e.target;
     if (isLetters(value)) {
-      setValLastName(value);
+      setLastName(value);
     }
   };
   return (
@@ -167,9 +165,8 @@ const Request = () => {
           id="firstname"
           label="First Name"
           placeholder="First Name"
-          onChange={(e) => {
-            setFirstName(e.target.value);
-          }}
+          value={firstname}
+          onChange={onInputChangeFirstName}
         />
         <TextField
           required
@@ -177,9 +174,8 @@ const Request = () => {
           id="lastname"
           label="Last Name"
           placeholder="Last Name"
-          onChange={(e) => {
-            setLastName(e.target.value);
-          }}
+          value={lastname}
+          onChange={onInputChangeLastName}
         />
         <TextField
           required

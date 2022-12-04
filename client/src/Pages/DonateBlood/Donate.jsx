@@ -71,20 +71,21 @@ const Donate = () => {
   const handleChange = (newValue) => {
     setValue(newValue);
   };
-  const [valFirstName, setValFirstName] = React.useState("");
+  const [firstname, setFirstName] = React.useState("");
+
+  const [lastname, setLastName] = React.useState("");
 
   const onInputChangeFirstName = (e) => {
     const { value } = e.target;
     if (isLetters(value)) {
-      setValFirstName(value);
+      setFirstName(value);
     }
   };
-  const [valLastName, setValLastName] = React.useState("");
 
   const onInputChangeLastName = (e) => {
     const { value } = e.target;
     if (isLetters(value)) {
-      setValLastName(value);
+      setLastName(value);
     }
   };
   return (
@@ -136,7 +137,7 @@ const Donate = () => {
           id="firstname"
           label="First Name"
           placeholder="First Name"
-          value={valFirstName} onChange={onInputChangeFirstName}
+          value={firstname} onChange={onInputChangeFirstName}
         />
         <TextField
           required
@@ -144,7 +145,7 @@ const Donate = () => {
           id="lastname"
           label="Last Name"
           placeholder="Last Name"
-          value={valLastName} onChange={onInputChangeLastName}
+          value={lastname} onChange={onInputChangeLastName}
         />
         <TextField
           required
