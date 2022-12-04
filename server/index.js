@@ -18,6 +18,16 @@ app.post("/create", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
+  const healthcard = req.body.healthcard;
+  const firstname = req.body.firstname;
+  const lastname = req.body.lastname;
+  const age = req.body.age;
+  const address = req.body.address;
+  const bloodtype = req.body.bloodtype;
+  const gender = req.body.gender;
+  const reason = req.body.reason;
+  const phone = req.body.phone;
+
   db.query(
     "INSERT INTO registration (email, password) VALUES (?,?)",
     [email, password],
@@ -26,6 +36,41 @@ app.post("/create", (req, res) => {
         console.log(err);
       } else {
         res.send("Registration values are inserted!");
+      }
+    }
+  );
+});
+
+app.post("/reqcall", (req, res) => {
+  console.log(req.body);
+  const healthcard = req.body.healthcard;
+  const firstname = req.body.firstname;
+  const lastname = req.body.lastname;
+  const age = req.body.age;
+  const address = req.body.address;
+  const bloodtype = req.body.bloodtype;
+  const gender = req.body.gender;
+  const reason = req.body.reason;
+  const phone = req.body.phone;
+
+  db.query(
+    "INSERT INTO request (healthcard, firstname,lastname,age,address,bloodtype,gender,reason,phone) VALUES (?,?,?,?,?,?,?,?,?)",
+    [
+      healthcard,
+      firstname,
+      lastname,
+      age,
+      address,
+      bloodtype,
+      gender,
+      reason,
+      phone,
+    ],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send("Request values are inserted!");
       }
     }
   );

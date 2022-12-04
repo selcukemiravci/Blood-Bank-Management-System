@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import { MuiTelInput } from "mui-tel-input";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
+import Axios from "axios";
 
 const bloodType = [
   {
@@ -67,10 +68,37 @@ const Request = () => {
     setGender(event.target.value);
   };
 
-  const [value, setValue] = React.useState("");
+  const [phone, setPhone] = React.useState("");
 
   const handleChange = (newValue) => {
-    setValue(newValue);
+    setPhone(newValue);
+  };
+  const [healthcard, setHealthCard] = React.useState("");
+
+  const [firstname, setFirstName] = React.useState("");
+
+  const [lastname, setLastName] = React.useState("");
+
+  const [age, setAge] = React.useState("");
+
+  const [address, setAddress] = React.useState("");
+
+  const [reason, setReason] = React.useState("");
+
+  const addRequest = () => {
+    Axios.post("http://localhost:3001/reqcall", {
+      healthcard: healthcard,
+      firstname: firstname,
+      lastname: lastname,
+      age: age,
+      address: address,
+      bloodtype: blood,
+      gender: gender,
+      reason: reason,
+      phone: phone,
+    }).then(() => {
+      console.log("Success");
+    });
   };
   const [valFirstName, setValFirstName] = React.useState("");
 
@@ -129,6 +157,9 @@ const Request = () => {
           id="healthcard"
           label="Health Card"
           placeholder="Health Card"
+          onChange={(e) => {
+            setHealthCard(e.target.value);
+          }}
         />
         <TextField
           required
@@ -136,8 +167,9 @@ const Request = () => {
           id="firstname"
           label="First Name"
           placeholder="First Name"
-          value={valFirstName}
-          onChange={onInputChangeFirstName}
+          onChange={(e) => {
+            setFirstName(e.target.value);
+          }}
         />
         <TextField
           required
@@ -145,8 +177,18 @@ const Request = () => {
           id="lastname"
           label="Last Name"
           placeholder="Last Name"
-          value={valLastName}
-          onChange={onInputChangeLastName}
+          onChange={(e) => {
+            setLastName(e.target.value);
+          }}
+        />
+        <TextField
+          required
+          id="age"
+          label="Age"
+          placeholder="Age"
+          onChange={(e) => {
+            setAge(e.target.value);
+          }}
         />
         <TextField
           required
@@ -167,6 +209,9 @@ const Request = () => {
           id="address"
           label="Address"
           placeholder="Address"
+          onChange={(e) => {
+            setAddress(e.target.value);
+          }}
         />
 
         <Stack direction="row" spacing={2} maxWidth="516px">
@@ -207,6 +252,9 @@ const Request = () => {
           multiline
           rows={4}
           placeholder="Please describe your reason for blood request"
+          onChange={(e) => {
+            setReason(e.target.value);
+          }}
         />
         <MuiTelInput
           id="phone"
@@ -214,12 +262,12 @@ const Request = () => {
           required
           defaultCountry="CA"
           label="Phone"
-          value={value}
+          value={phone}
           onChange={handleChange}
         />
         <Button
           variant="contained"
-          onClick={() => {}}
+          onClick={addRequest}
           style={{
             minWidth: "300px",
             minHeight: "50px",
