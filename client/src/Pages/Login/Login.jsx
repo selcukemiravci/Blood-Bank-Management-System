@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import logo from "../../Images/loogo.png";
+import { response } from "express";
 import Axios from "axios";
 
 
@@ -10,7 +11,6 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
 
   const login = () => {
     Axios.post("http://localhost:3001/processLogin", {
@@ -24,6 +24,7 @@ const Login = () => {
       }
     });
   };
+
 
 
   const handleSubmit = (e) => {
@@ -72,6 +73,9 @@ const Login = () => {
                             }}
                             placeholder="Email Address"
                             required
+                            // onChange={(e) => {
+                            //   setEmail(e.target.value);
+                            // }}
                           />
                         </div>
 
@@ -85,11 +89,14 @@ const Login = () => {
                             }}
                             className="form-control"
                             required
+                            //onChange={(e) => {
+                            //  setPassword(e.target.value);
+                            //}}
                           />
                         </div>
 
                         <div className="text-center pt-1 mb-5 pb-1">
-                          <button className="theme-btn btn-fill" type="submit">
+                          <button /*onClick={login}*/ className="theme-btn btn-fill" type="submit">
                             Log in
                           </button>
                           <button
