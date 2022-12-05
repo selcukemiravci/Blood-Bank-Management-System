@@ -149,7 +149,7 @@ const Request = () => {
           onInput={(e) => {
             e.target.value = Math.max(0, parseInt(e.target.value))
               .toString()
-              .slice(0, 10);
+              .slice(0, 9);
           }}
           min={0}
           id="healthcard"
@@ -179,6 +179,13 @@ const Request = () => {
         />
         <TextField
           required
+          type="number"
+          onInput={(e) => {
+            e.target.value = Math.max(0, parseInt(e.target.value))
+              .toString()
+              .slice(0, 3);
+          }}
+          min={0}
           id="age"
           label="Age"
           placeholder="Age"
@@ -188,20 +195,7 @@ const Request = () => {
         />
         <TextField
           required
-          type="number"
-          onInput={(e) => {
-            e.target.value = Math.max(0, parseInt(e.target.value))
-              .toString()
-              .slice(0, 16);
-          }}
-          min={0}
-          id="age"
-          label="Age"
-          placeholder="Age"
-        />
-        <TextField
-          required
-          inputProps={{ maxLength: 20 }}
+          inputProps={{ maxLength: 35 }}
           id="address"
           label="Address"
           placeholder="Address"

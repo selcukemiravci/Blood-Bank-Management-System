@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import { MuiTelInput } from "mui-tel-input";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
+import Axios from "axios";
 
 const bloodType = [
   {
@@ -66,14 +67,36 @@ const Donate = () => {
     setGender(event.target.value);
   };
 
-  const [value, setValue] = React.useState("");
+  const [phone, setPhone] = React.useState("");
 
   const handleChange = (newValue) => {
-    setValue(newValue);
+    setPhone(newValue);
   };
+
+  const [healthcard, setHealthCard] = React.useState("");
+
   const [firstname, setFirstName] = React.useState("");
 
   const [lastname, setLastName] = React.useState("");
+
+  const [age, setAge] = React.useState("");
+
+  const [address, setAddress] = React.useState("");
+
+  const addDonation = () => {
+    Axios.post("http://localhost:3001/doncall", {
+      healthcard: healthcard,
+      firstname: firstname,
+      lastname: lastname,
+      age: age,
+      address: address,
+      bloodtype: blood,
+      gender: gender,
+      phone: phone,
+    }).then(() => {
+      console.log("Success");
+    });
+  };
 
   const onInputChangeFirstName = (e) => {
     const { value } = e.target;
@@ -123,12 +146,15 @@ const Donate = () => {
           onInput={(e) => {
             e.target.value = Math.max(0, parseInt(e.target.value))
               .toString()
-              .slice(0, 10);
+              .slice(0, 9);
           }}
           min={0}
           id="healthcard"
           label="Health Card"
           placeholder="Health Card"
+          onChange={(e) => {
+            setHealthCard(e.target.value);
+          }}
         />
         <TextField
           required
@@ -137,7 +163,8 @@ const Donate = () => {
           id="firstname"
           label="First Name"
           placeholder="First Name"
-          value={firstname} onChange={onInputChangeFirstName}
+          value={firstname}
+          onChange={onInputChangeFirstName}
         />
         <TextField
           required
@@ -145,7 +172,8 @@ const Donate = () => {
           id="lastname"
           label="Last Name"
           placeholder="Last Name"
-          value={lastname} onChange={onInputChangeLastName}
+          value={lastname}
+          onChange={onInputChangeLastName}
         />
         <TextField
           required
@@ -153,19 +181,25 @@ const Donate = () => {
           onInput={(e) => {
             e.target.value = Math.max(0, parseInt(e.target.value))
               .toString()
-              .slice(0, 16);
+              .slice(0, 3);
           }}
           min={0}
           id="age"
           label="Age"
           placeholder="Age"
+          onChange={(e) => {
+            setAge(e.target.value);
+          }}
         />
         <TextField
           required
-          inputProps={{ maxLength: 20 }}
+          inputProps={{ maxLength: 35 }}
           id="address"
           label="Address"
           placeholder="Address"
+          onChange={(e) => {
+            setAddress(e.target.value);
+          }}
         />
 
         <Stack direction="row" spacing={2} maxWidth="516px">
@@ -206,12 +240,12 @@ const Donate = () => {
           inputProps={{ maxLength: 15 }}
           defaultCountry="CA"
           label="Phone"
-          value={value}
+          value={phone}
           onChange={handleChange}
         />
         <Button
           variant="contained"
-          onClick={() => {}}
+          onClick={addDonation}
           style={{
             minWidth: "300px",
             minHeight: "50px",
