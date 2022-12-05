@@ -97,24 +97,10 @@ const Donate = () => {
       gender: gender,
       phone: phone,
     }).then(() => {
-      setEmployeeList([
-        ...employeeList,
-        {
-          firstname: firstname,
-          age: age,
-          bloodtype: blood,
-          gender: gender,
-        },
-      ]);
+      console.log("Success");
     });
   };
-  const [employeeList, setEmployeeList] = React.useState([]);
 
-  const getEmployees = () => {
-    Axios.get("http://localhost:3001/dashdon").then((response) => {
-      setEmployeeList(response.data);
-    });
-  };
   const onInputChangeFirstName = (e) => {
     const { value } = e.target;
     if (isLetters(value)) {
@@ -281,33 +267,7 @@ const Donate = () => {
         >
           Donate Blood!
         </Button>
-        <Button
-          onClick={getEmployees}
-          style={{
-            minWidth: "300px",
-            minHeight: "50px",
-            backgroundColor: "white",
-            fontSize: 16,
-            fontWeight: "bold",
-            borderColor: "black",
-            border: "3px solid",
-            color: "black",
-          }}
-        >
-          Access to Donor Dashboard
-        </Button>
-        {employeeList.map((val, key) => {
-          return (
-            <div className="employee">
-              <div>
-                <h3>Name: {val.firstname}</h3>
-                <h3>Age: {val.age}</h3>
-                <h3>Blood Type: {val.bloodtype}</h3>
-                <h3>Gender: {val.gender}</h3>
-              </div>
-            </div>
-          );
-        })}
+
         <Button
           onClick={handleSubmit}
           style={{
