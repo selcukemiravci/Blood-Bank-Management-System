@@ -4,30 +4,53 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import logo from "../../Images/loogo.png";
 import Axios from "axios";
+import Modal from "@mui/material/Modal";
+import Backdrop from "@mui/material/Backdrop";
+import Fade from "@mui/material/Fade";
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
+
 
 const Login = () => {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [open, setOpen] = React.useState(false);
 
-  const login = () => {
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
+
+  const navigate = useNavigate();
+
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  const loginApprove = (e) => {
     Axios.post("http://localhost:3001/processLogin", {
       email: email,
       password: password,
     }).then((response) => {
-      if (response.data.message) {
+      if (response.data[0].email && response.data[0].password) {
         console.log(response);
-        handleSubmit();
+        e.preventDefault();
+        navigate("/approved");
       } else {
         console.log("Can't login");
+        handleOpen();
+
       }
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate("/approved");
-  };
 
   const registerRoute = (e) => {
     e.preventDefault();
@@ -58,13 +81,12 @@ const Login = () => {
                         donation
                       </p>
 
-                      <form onSubmit={login}>
+                      <form /*onSubmit={loginApprove}*/ >
                         <div className="form-outline mb-4">
                           <input
-                            type="email"
-                            id="form2Example11"
+                            type="text"
                             className="form-control"
-                            onChange={(e) => {
+                            onBlur={(e) => {
                               setEmail(e.target.value);
                             }}
                             placeholder="Email Address"
@@ -75,23 +97,43 @@ const Login = () => {
                         <div className="form-outline mb-4">
                           <input
                             type="password"
-                            id="form2Example22"
-                            placeholder="Password"
-                            onChange={(e) => {
+                            className="form-control"
+                            onBlur={(e) => {
                               setPassword(e.target.value);
                             }}
-                            className="form-control"
+                            placeholder="Password"
                             required
                           />
                         </div>
 
-                        <div className="text-center pt-1 mb-5 pb-1">
+                        <div className="form-outline mb-4">
                           <button
-                            /*onClick={login}*/ className="theme-btn btn-fill"
-                            type="submit"
+                             onClick={loginApprove} type="button" className="theme-btn btn-fill"
                           >
                             Log in
                           </button>
+                          <Modal
+                          open={open}
+                            onClose={handleClose}
+                            closeAfterTransition
+                            BackdropComponent={Backdrop}
+                            BackdropProps={{
+                              timeout: 500,
+                            }}
+                          >
+                            <Fade in={open}>
+                              <Box sx={style}>
+                                <h2>
+                                  <u>Access Denied</u>
+                                </h2>
+                                <p>
+                                  {" "}
+                                  Wrong email or password combination. {" "}
+                                  {" "}Please try again or click on forgot password.{" "}
+                                </p>
+                              </Box>
+                            </Fade>
+                          </Modal>
                           <button
                             className="btn btn-outline-danger"
                             onClick={forgotRoute}
