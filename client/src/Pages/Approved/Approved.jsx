@@ -62,22 +62,6 @@ const Approved = () => {
               >
                 Request Blood
               </Button>
-              <Button
-                variant="contained"
-                onClick={dashboard}
-                style={{
-                  minWidth: "300px",
-                  minHeight: "50px",
-                  backgroundColor: "white",
-                  fontSize: 16,
-                  fontWeight: "bold",
-                  borderColor: "red",
-                  border: "3px solid",
-                  color: "red",
-                }}
-              >
-                Dashboard
-              </Button>
             </Stack>
           </Box>
         </Col>

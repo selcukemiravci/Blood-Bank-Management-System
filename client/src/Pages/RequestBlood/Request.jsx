@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import React from "react";
+import "./Request.css";
 import { Col, Container, Row } from "react-bootstrap";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
@@ -8,6 +9,8 @@ import { MuiTelInput } from "mui-tel-input";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import Axios from "axios";
+
+import { useNavigate } from "react-router-dom";
 
 const bloodType = [
   {
@@ -56,6 +59,8 @@ const genders = [
 const isLetters = (str) => /^[A-Za-z]*$/.test(str);
 
 const Request = () => {
+  const navigate = useNavigate();
+
   const [blood, setBlood] = React.useState("");
 
   const handleeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -97,8 +102,29 @@ const Request = () => {
       reason: reason,
       phone: phone,
     }).then(() => {
-      console.log("Success");
+      setEmployeeList([
+        ...employeeList,
+        {
+          firstname: firstname,
+          age: age,
+          bloodtype: blood,
+          gender: gender,
+          reason: reason,
+        },
+      ]);
     });
+  };
+  const [employeeList, setEmployeeList] = React.useState([]);
+
+  const getEmployees = () => {
+    Axios.get("http://localhost:3001/dash").then((response) => {
+      setEmployeeList(response.data);
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/login");
   };
 
   const onInputChangeFirstName = (e) => {
@@ -271,10 +297,52 @@ const Request = () => {
         >
           Request Blood!
         </Button>
+        <Button
+          onClick={getEmployees}
+          style={{
+            minWidth: "300px",
+            minHeight: "50px",
+            backgroundColor: "white",
+            fontSize: 16,
+            fontWeight: "bold",
+            borderColor: "black",
+            border: "3px solid",
+            color: "black",
+          }}
+        >
+          Access to Patient Dashboard
+        </Button>
+        {employeeList.map((val, key) => {
+          return (
+            <div className="employee">
+              <div>
+                <h3>Name: {val.firstname}</h3>
+                <h3>Age: {val.age}</h3>
+                <h3>Blood Type: {val.bloodtype}</h3>
+                <h3>Gender: {val.gender}</h3>
+                <h3>Reason: {val.reason}</h3>
+              </div>
+            </div>
+          );
+        })}
+        <Button
+          onClick={handleSubmit}
+          style={{
+            minWidth: "150",
+            minHeight: "50px",
+            backgroundColor: "white",
+            fontSize: 16,
+            fontWeight: "bold",
+            borderColor: "orange",
+            border: "3px solid",
+            color: "orange",
+          }}
+        >
+          Go Back
+        </Button>
         <Container></Container>
       </Stack>
     </Box>
   );
 };
-
 export default Request;

@@ -8,6 +8,7 @@ import { MuiTelInput } from "mui-tel-input";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import Axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const bloodType = [
   {
@@ -55,6 +56,8 @@ const genders = [
 ];
 const isLetters = (str) => /^[A-Za-z]*$/.test(str);
 const Donate = () => {
+  const navigate = useNavigate();
+
   const [blood, setBlood] = React.useState("");
 
   const handleeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -110,6 +113,11 @@ const Donate = () => {
     if (isLetters(value)) {
       setLastName(value);
     }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/login");
   };
   return (
     <Box
@@ -258,6 +266,22 @@ const Donate = () => {
           }}
         >
           Donate Blood!
+        </Button>
+
+        <Button
+          onClick={handleSubmit}
+          style={{
+            minWidth: "150",
+            minHeight: "50px",
+            backgroundColor: "white",
+            fontSize: 16,
+            fontWeight: "bold",
+            borderColor: "orange",
+            border: "3px solid",
+            color: "orange",
+          }}
+        >
+          Go Back
         </Button>
         <Container></Container>
       </Stack>
