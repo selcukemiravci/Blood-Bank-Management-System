@@ -25,14 +25,6 @@ const Register = () => {
 
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  // const register = () => {
-  //   Axios.post("http://localhost:3001/register", {
-  //     email: emailReg,
-  //     password: passwordReg,
-  //   }).then((response) => {
-  //     console.log(response);
-  //   });
-  // };
 
   const addRegistration = () => {
     Axios.post("http://localhost:3001/create", {
