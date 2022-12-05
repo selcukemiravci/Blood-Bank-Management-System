@@ -49,6 +49,25 @@ app.post("/processLogin", (req, res) => {
     );
 });
 
+app.post("/forgotP", (req, res) => {
+    const email = req.body.email;
+    // const password = req.body.password;
+
+    db.query(
+        "SELECT * FROM registration WHERE email = ?" /*AND password = ?"*/ , [email /*, password*/ ],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+            }
+            if (result.length > 0) {
+                res.send(result);
+            } else {
+                res.send("Wrong email address!");
+            }
+        }
+    );
+});
+
 app.post("/doncall", (req, res) => {
     console.log(req.body);
     const healthcard = req.body.healthcard;

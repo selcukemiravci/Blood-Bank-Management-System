@@ -13,11 +13,36 @@ import Modal from "@mui/material/Modal";
 import Backdrop from "@mui/material/Backdrop";
 import Fade from "@mui/material/Fade";
 import { styled } from "@mui/material/styles";
+import Axios from "axios";
+
 const Register = () => {
   const [open, setOpen] = React.useState(false);
 
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => {
+    forgotApprove();
+    setOpen(true);
+  }
   const handleClose = () => setOpen(false);
+  
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  const forgotApprove = (e) => {
+    Axios.post("http://localhost:3001/forgotP", {
+      email: email,
+      password: password,
+    }).then((response) => {
+      if (response.data[0].email) {
+        setEmail(response.data[0].email);
+        setPassword(response.data[0].password);
+      } else {
+        console.log("Can't find email");
+        // handleOpen();
+
+      }
+    });
+  };
+
   const navigate = useNavigate();
   const renewPassword = () => {
     navigate("/home");
@@ -73,16 +98,20 @@ const Register = () => {
               Password Access Request Form
             </Typography>
             <Container></Container>
-            <TextField
+            <input
               required
               id="email-address"
               label="Email Address"
               placeholder="Email Address"
+              onBlur={(e) => {
+                setEmail(e.target.value);
+              }}
             />
             <text>Please enter your email address to access your account.</text>
             <Button
               variant="contained"
               onClick={handleOpen}
+              type="button"
               style={{
                 minWidth: "300px",
                 minHeight: "50px",
@@ -112,8 +141,8 @@ const Register = () => {
                   <p>
                     {" "}
                     For the account with the following email address :{" "}
-                    {" EMAIL ADDRESS "}, the assosicated password is :{" "}
-                    {" PASSWORD "}.
+                    {email}, the assosicated password is :{" "}
+                    {password}.
                   </p>
                 </Box>
               </Fade>
