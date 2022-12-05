@@ -100,6 +100,16 @@ app.get("/dash", (req, res) => {
   });
 });
 
+app.get("/dashdon", (req, res) => {
+  db.query("SELECT * FROM donate", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
 app.listen(3001, () => {
   console.log("Server is running on port 3001");
 });
