@@ -6,7 +6,6 @@ import logo from "../../Images/loogo.png";
 import { response } from "express";
 import Axios from "axios";
 
-
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -17,15 +16,14 @@ const Login = () => {
       email: email,
       password: password,
     }).then((response) => {
-      if(response.data.message) {
-        handleSubmit()
+      if (response.data.message) {
+        console.log(response);
+        handleSubmit();
       } else {
-        console.log("Can't login")
+        console.log("Can't login");
       }
     });
   };
-
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,7 +39,6 @@ const Login = () => {
     e.preventDefault();
     navigate("/forgot");
   };
-
 
   return (
     <>
@@ -96,7 +93,10 @@ const Login = () => {
                         </div>
 
                         <div className="text-center pt-1 mb-5 pb-1">
-                          <button /*onClick={login}*/ className="theme-btn btn-fill" type="submit">
+                          <button
+                            /*onClick={login}*/ className="theme-btn btn-fill"
+                            type="submit"
+                          >
                             Log in
                           </button>
                           <button

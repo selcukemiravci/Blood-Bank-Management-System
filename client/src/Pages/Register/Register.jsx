@@ -11,8 +11,10 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormHelperText from "@mui/material/FormHelperText";
 import Axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [patientFlag, setPatientFlag] = React.useState(true);
   const [donorFlag, setDonorFlag] = React.useState(true);
 
@@ -22,7 +24,18 @@ const Register = () => {
   const handleClickDonor = () => {
     setPatientFlag(!patientFlag);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/approved");
+  };
 
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
@@ -67,80 +80,99 @@ const Register = () => {
               Registration Form
             </Typography>
             <Container></Container>
-            <TextField
-              required
-              id="email-address"
-              label="Email Address"
-              placeholder="Email Address"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
-            <TextField
-              required
-              id="password"
-              label="Password"
-              placeholder="Password"
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-            />
-            <FormControl component="fieldset">
-              <FormGroup>
-                {patientFlag ? (
-                  <FormControlLabel
-                    control={
-                      <Checkbox onChange={handleClickPatient} name="patients" />
-                    }
-                    label="Request Blood"
-                  />
-                ) : (
-                  <FormControlLabel
-                    disabled
-                    control={
-                      <Checkbox onChange={handleClickPatient} name="patients" />
-                    }
-                    label="Request Blood"
-                  />
-                )}
-                {donorFlag ? (
-                  <FormControlLabel
-                    control={
-                      <Checkbox onChange={handleClickDonor} name="donors" />
-                    }
-                    label="Donate Blood"
-                  />
-                ) : (
-                  <FormControlLabel
-                    disabled
-                    control={
-                      <Checkbox onChange={handleClickDonor} name="donors" />
-                    }
-                    label="Donate Blood"
-                  />
-                )}
-              </FormGroup>
-              <FormHelperText>
-                Please choose the most appropiate options above for your
-                registration.
-              </FormHelperText>
-            </FormControl>
-            <Button
-              variant="contained"
-              onClick={addRegistration}
-              style={{
-                minWidth: "300px",
-                minHeight: "50px",
-                backgroundColor: "white",
-                fontSize: 16,
-                fontWeight: "bold",
-                borderColor: "black",
-                border: "3px solid",
-                color: "black",
-              }}
-            >
-              Submit Registeration
-            </Button>
+            <form onSubmit={handleSubmit}>
+              <div className="form-outline mb-4">
+                <input
+                  onBlur={handleEmailChange}
+                  type="email"
+                  id="mail"
+                  className="form-control"
+                  placeholder="Email Address"
+                  required
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+              </div>
+
+              <div className="form-outline mb-4">
+                <input
+                  onBlur={handlePasswordChange}
+                  type="password"
+                  id="pass"
+                  placeholder="Password"
+                  className="form-control"
+                  required
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                />
+              </div>
+
+              <FormControl component="fieldset">
+                <FormGroup>
+                  {patientFlag ? (
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          onChange={handleClickPatient}
+                          name="patients"
+                        />
+                      }
+                      label="Request Blood"
+                    />
+                  ) : (
+                    <FormControlLabel
+                      disabled
+                      control={
+                        <Checkbox
+                          onChange={handleClickPatient}
+                          name="patients"
+                        />
+                      }
+                      label="Request Blood"
+                    />
+                  )}
+                  {donorFlag ? (
+                    <FormControlLabel
+                      control={
+                        <Checkbox onChange={handleClickDonor} name="donors" />
+                      }
+                      label="Donate Blood"
+                    />
+                  ) : (
+                    <FormControlLabel
+                      disabled
+                      control={
+                        <Checkbox onChange={handleClickDonor} name="donors" />
+                      }
+                      label="Donate Blood"
+                    />
+                  )}
+                </FormGroup>
+                <FormHelperText>
+                  Please choose the most appropiate options above for your
+                  registration.
+                </FormHelperText>
+              </FormControl>
+              <Button
+                variant="contained"
+                type="submit"
+                onClick={addRegistration}
+                style={{
+                  minWidth: "300px",
+                  minHeight: "50px",
+                  backgroundColor: "white",
+                  fontSize: 16,
+                  fontWeight: "bold",
+                  borderColor: "black",
+                  border: "3px solid",
+                  color: "black",
+                }}
+              >
+                Submit Registeration
+              </Button>
+            </form>
             <Container></Container>
           </Stack>
         </Box>
