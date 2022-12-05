@@ -3,11 +3,28 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import logo from "../../Images/loogo.png";
+import Axios from "axios";
+
 
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+
+  const login = () => {
+    Axios.post("http://localhost:3001/processLogin", {
+      email: email,
+      password: password,
+    }).then((response) => {
+      if(response.data.message) {
+        handleSubmit()
+      } else {
+        console.log("Can't login")
+      }
+    });
+  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,13 +41,7 @@ const Login = () => {
     navigate("/forgot");
   };
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
   return (
     <>
       <section className="h-100 gradient-form pb-5">
@@ -50,13 +61,15 @@ const Login = () => {
                         donation
                       </p>
 
-                      <form onSubmit={handleSubmit}>
+                      <form onSubmit={login}>
                         <div className="form-outline mb-4">
                           <input
-                            onBlur={handleEmailChange}
                             type="email"
                             id="form2Example11"
                             className="form-control"
+                            onChange={(e) => {
+                              setEmail(e.target.value);
+                            }}
                             placeholder="Email Address"
                             required
                           />
@@ -64,10 +77,12 @@ const Login = () => {
 
                         <div className="form-outline mb-4">
                           <input
-                            onBlur={handlePasswordChange}
                             type="password"
                             id="form2Example22"
                             placeholder="Password"
+                            onChange={(e) => {
+                              setPassword(e.target.value);
+                            }}
                             className="form-control"
                             required
                           />
