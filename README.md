@@ -25,7 +25,6 @@ The following technologies and tools were used to build our project:
 ## Downloading the project:
 * Easiest way is to clone the repository:
     + [Blood Management System GitHub](https://github.com/selcukemiravci/Blood-Bank-Management-System)
-    + Alternatively, if you're a TA or Professor, you need to move our code into a file system where you have permissions to run and compile code.
 
 ## Installation
 
