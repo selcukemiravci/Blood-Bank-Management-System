@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import logo from "../../Images/loogo.png";
-import { response } from "express";
 import Axios from "axios";
 
 const Login = () => {
@@ -70,9 +69,6 @@ const Login = () => {
                             }}
                             placeholder="Email Address"
                             required
-                            // onChange={(e) => {
-                            //   setEmail(e.target.value);
-                            // }}
                           />
                         </div>
 
@@ -86,9 +82,6 @@ const Login = () => {
                             }}
                             className="form-control"
                             required
-                            //onChange={(e) => {
-                            //  setPassword(e.target.value);
-                            //}}
                           />
                         </div>
 
