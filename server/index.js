@@ -91,6 +91,30 @@ app.post("/doncall", (req, res) => {
     );
 });
 
+app.post("/reqcall", (req, res) => {
+    console.log(req.body);
+    const healthcard = req.body.healthcard;
+    const firstname = req.body.firstname;
+    const lastname = req.body.lastname;
+    const age = req.body.age;
+    const address = req.body.address;
+    const bloodtype = req.body.bloodtype;
+    const gender = req.body.gender;
+    const reason = req.body.reason;
+    const phone = req.body.phone;
+
+    db.query(
+        "INSERT INTO request (healthcard, firstname,lastname,age,address,bloodtype,gender,reason,phone) VALUES (?,?,?,?,?,?,?,?,?)", [healthcard, firstname, lastname, age, address, bloodtype, gender, reason, phone],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.send("Donate values are inserted!");
+            }
+        }
+    );
+});
+
 app.get("/dash", (req, res) => {
     db.query("SELECT * FROM request", (err, result) => {
         if (err) {

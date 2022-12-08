@@ -284,6 +284,7 @@ const Request = () => {
         <Button
           variant="contained"
           onClick={addRequest}
+          type="button"
           style={{
             minWidth: "300px",
             minHeight: "50px",
