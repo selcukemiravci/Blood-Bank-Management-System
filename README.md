@@ -78,11 +78,32 @@ If you have never used material-ui, execute the following commands in your termi
 npm install @mui/material @emotion/react @emotion/styled
 ```
 
-## Step 6: Starting the App
+Then you now have to install extenal libraries for the server. Execute these commands on server folder in your directory.
+```
+npm install axios
+npm install cors
+```
+
+## Step 6: Connecting the Database
+Before you run the code, you will need to create your database which you can import from:
+```
+CPSC471 Group7 Database.sql
+```
+
+## Step 7: Starting the App
+First, open 2 terminals, one for the server and one for the website.
+
 Go to the root directory of the project and then start the app:
 ```
 $ cd Blood-Bank-Management-System    // first, go to root directory of the project...
+$ cd client                          // make sure you cd into clinet folder
 $ npm start                          // then, start the app in the root directory
+```
+Go to the room directory of the project and then start the server:
+```
+$ cd Blood-Bank-Management-System    // first, go to root directory of the project...
+$ cd server                          // make sure you cd into server folder
+$ node index.js                      // then, start the server in your terminal
 ```
 
 ### `npm start`
