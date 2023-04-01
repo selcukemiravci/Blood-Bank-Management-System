@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Blood-Bank-Management-System/static/css/main.260ba3d0.css",
-    "main.js": "/Blood-Bank-Management-System/static/js/main.c1b45aa1.js",
+    "main.js": "/Blood-Bank-Management-System/static/js/main.ec085e77.js",
     "static/js/787.f42bb775.chunk.js": "/Blood-Bank-Management-System/static/js/787.f42bb775.chunk.js",
     "static/media/blood.png": "/Blood-Bank-Management-System/static/media/blood.1f0699b3924d7bce592d.png",
     "static/media/josefin-sans-all-400-normal.woff": "/Blood-Bank-Management-System/static/media/josefin-sans-all-400-normal.e89cb50b139916039cdc.woff",
@@ -16,11 +16,11 @@
     "static/media/josefin-sans-vietnamese-400-normal.woff2": "/Blood-Bank-Management-System/static/media/josefin-sans-vietnamese-400-normal.4a3e569a0e9e99674d59.woff2",
     "index.html": "/Blood-Bank-Management-System/index.html",
     "main.260ba3d0.css.map": "/Blood-Bank-Management-System/static/css/main.260ba3d0.css.map",
-    "main.c1b45aa1.js.map": "/Blood-Bank-Management-System/static/js/main.c1b45aa1.js.map",
+    "main.ec085e77.js.map": "/Blood-Bank-Management-System/static/js/main.ec085e77.js.map",
     "787.f42bb775.chunk.js.map": "/Blood-Bank-Management-System/static/js/787.f42bb775.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.260ba3d0.css",
-    "static/js/main.c1b45aa1.js"
+    "static/js/main.ec085e77.js"
   ]
 }
