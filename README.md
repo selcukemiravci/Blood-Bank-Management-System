@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Description](#Description)
+- [Demo](#Demo)
 - [Requirements](#Requirements)
 - [Installation](#installation)
 - [Authors](#Authors)
@@ -11,6 +12,8 @@
 ## Description
 This project was made by Computer Science Undergraduate students from the University of Calgary
 for the CPSC 471 Fall 2022 - Database Management Systems course.
+
+## Project Demo
 
 
 ## Requirements:
