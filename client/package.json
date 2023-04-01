@@ -2,7 +2,7 @@
   "name": "bloody-bank",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://selcukemiravci.github.io/Blood-Bank-Management-System",
+  "homepage": "https://selcukemiravci.github.io/Blood-Bank-Management-System/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
