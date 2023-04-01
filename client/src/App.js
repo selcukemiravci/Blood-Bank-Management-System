@@ -19,17 +19,17 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/service" element={<Service />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/forgot" element={<Forgot />} />
-          <Route path="/approved" element={<Approved />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/donate" element={<Donate />} />
-          <Route path="/request" element={<Request />} />
+          <Route path="/Blood-Bank-Management-System" element={<Home />} />
+          <Route path="/Blood-Bank-Management-System/home" element={<Home />} />
+          <Route path="/Blood-Bank-Management-System/about" element={<About />} />
+          <Route path="/Blood-Bank-Management-System/service" element={<Service />} />
+          <Route path="/Blood-Bank-Management-System/contact" element={<Contact />} />
+          <Route path="/Blood-Bank-Management-System/register" element={<Register />} />
+          <Route path="/Blood-Bank-Management-System/forgot" element={<Forgot />} />
+          <Route path="/Blood-Bank-Management-System/approved" element={<Approved />} />
+          <Route path="/Blood-Bank-Management-System/login" element={<Login />} />
+          <Route path="/Blood-Bank-Management-System/donate" element={<Donate />} />
+          <Route path="/Blood-Bank-Management-System/request" element={<Request />} />
         </Routes>
         <Footer />
       </Router>
