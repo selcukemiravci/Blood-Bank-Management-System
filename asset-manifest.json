@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/blood-bank-management/static/css/main.d2cbc7f1.css",
+    "main.js": "/blood-bank-management/static/js/main.d09089ba.js",
+    "static/js/787.f42bb775.chunk.js": "/blood-bank-management/static/js/787.f42bb775.chunk.js",
+    "static/media/blood.png": "/blood-bank-management/static/media/blood.1f0699b3924d7bce592d.png",
+    "static/media/josefin-sans-all-400-normal.woff": "/blood-bank-management/static/media/josefin-sans-all-400-normal.e89cb50b139916039cdc.woff",
+    "static/media/health.png": "/blood-bank-management/static/media/health.ccdc86c4f02334bfd281.png",
+    "static/media/healthcare.png": "/blood-bank-management/static/media/healthcare.d1b8ec7abc3a7c9b110c.png",
+    "static/media/service-details-promo1.png": "/blood-bank-management/static/media/service-details-promo1.443f860249f5015c6dae.png",
+    "static/media/doctor-nurse.png": "/blood-bank-management/static/media/doctor-nurse.25c2728a8c3138632ffe.png",
+    "static/media/hospital.png": "/blood-bank-management/static/media/hospital.82935ab4e046bd53fb4f.png",
+    "static/media/loogo.png": "/blood-bank-management/static/media/loogo.0fc593885fb9f9b5eedc.png",
+    "static/media/josefin-sans-latin-400-normal.woff2": "/blood-bank-management/static/media/josefin-sans-latin-400-normal.36152c4291179fb52202.woff2",
+    "static/media/josefin-sans-latin-ext-400-normal.woff2": "/blood-bank-management/static/media/josefin-sans-latin-ext-400-normal.3229870392aaa18099d0.woff2",
+    "static/media/josefin-sans-vietnamese-400-normal.woff2": "/blood-bank-management/static/media/josefin-sans-vietnamese-400-normal.4a3e569a0e9e99674d59.woff2",
+    "index.html": "/blood-bank-management/index.html",
+    "main.d2cbc7f1.css.map": "/blood-bank-management/static/css/main.d2cbc7f1.css.map",
+    "main.d09089ba.js.map": "/blood-bank-management/static/js/main.d09089ba.js.map",
+    "787.f42bb775.chunk.js.map": "/blood-bank-management/static/js/787.f42bb775.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2cbc7f1.css",
+    "static/js/main.d09089ba.js"
+  ]
+}
